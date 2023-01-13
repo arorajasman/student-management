@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '19'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// spring data jpa for working with database
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// spring starter web for creating REST API and MVC Apps
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// devtools for spring boot project
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// postgresql drive for connecting with postgresql database
+	runtimeOnly 'org.postgresql:postgresql'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
